@@ -1,7 +1,7 @@
 package shapes;
 
 /**
- * Created by simon on 5/10/17.
+ * Abstract class that contains information for the Shapes subclasses.
  */
 
 public abstract class Shape {
