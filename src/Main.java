@@ -6,15 +6,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String serverToConnect = JOptionPane.showInputDialog("Enter the host and the port for the Shape server (host:port):");
+        while(true){
 
-        String[] serverAddress = serverToConnect.split(":");
+            String serverToConnect = JOptionPane.showInputDialog("Enter the host and the port for the Shape server (host:port):");
 
-        try{
-            Socket connection = new Socket(serverAddress[0], Integer.parseInt(serverAddress[1]));
+            String[] serverAddress = serverToConnect.split(":");
 
-        }catch(IOException e){
-            e.printStackTrace();
+            try{
+
+                Socket connection = new Socket(serverAddress[0], Integer.parseInt(serverAddress[1]));
+
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, "Invalid server address.");
+                e.printStackTrace();
+            }
         }
 
     }
